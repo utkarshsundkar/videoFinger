@@ -5,6 +5,10 @@ import numpy as np
 import asyncio
 
 app = FastAPI()
+@app.get("/")
+def read_root():
+    return {"message": "API is running successfully 🚀"}
+    
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
